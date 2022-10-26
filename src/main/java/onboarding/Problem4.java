@@ -76,7 +76,13 @@ public class Problem4 {
     }
 
     public static String solution(String word) {
-        String answer = "";
-        return answer;
+        reverseWord = new ReverseWord(word);
+        while (reverseWord.isRemaining()) {
+            if (reverseWord.isChangable()) {
+                reverseWord.change();
+            }
+            reverseWord.searchNext();
+        }
+        return reverseWord.toString();
     }
 }
