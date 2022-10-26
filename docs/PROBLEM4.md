@@ -2,7 +2,7 @@
 
 ## 📈 기능 목록
 
-문제 2번의 흐름은 [입력된 String을 ReverseWord 인스턴스를 생성한다] > [reverseWord 을 통해서 변환한다] > [reverseWord toString으로 반환한다] 순으로 이루어진다
+문제 4번의 흐름은 [입력된 String을 ReverseWord 인스턴스를 생성한다] > [reverseWord 을 통해서 변환한다] > [reverseWord toString으로 반환한다] 순으로 이루어진다
 
 1. 입력된 String으로 ReverseWord 인스턴스를 생성한다
 2. reverseWord를 통해 변환한다
