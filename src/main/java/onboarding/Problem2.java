@@ -1,8 +1,17 @@
 package onboarding;
 
 public class Problem2 {
+    private static Decryption decryption;
     public static String solution(String cryptogram) {
-        return decrypt(cryptogram);
+        decryption = new Decryption(cryptogram);
+        while (decryption.isRemained()) {
+            if (!decryption.isDeletable()) {
+                decryption.searchNext();
+                continue;
+            }
+            decryption.delete();
+        }
+        return decryption.toString();
     }
 
     private static class Decryption {
