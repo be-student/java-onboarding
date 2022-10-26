@@ -18,6 +18,9 @@ class Problem1 {
         if (!isPageListConsecutive(pages)) {
             return false;
         }
+        if (!isPageListExist(pages)) {
+            return false;
+        }
         return true;
     }
 
@@ -45,4 +48,13 @@ class Problem1 {
         return true;
     }
 
+    private static boolean isPageListExist(List<Integer> pages) {
+        if (pages.get(0) % 2 == 0) {
+            return false;
+        }
+        if (pages.get(1) % 2 == 1) {
+            return false;
+        }
+        return true;
+    }
 }
