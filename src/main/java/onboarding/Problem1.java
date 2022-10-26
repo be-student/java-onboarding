@@ -11,10 +11,10 @@ class Problem1 {
         int pobiScore = getScoreWithPageList(pobi);
         int crongScore = getScoreWithPageList(crong);
 
-        if(pobiScore==crongScore){
+        if (pobiScore == crongScore) {
             return 0;
         }
-        if(pobiScore>crongScore){
+        if (pobiScore > crongScore) {
             return 1;
         }
         if(pobiScore<crongScore){
@@ -82,8 +82,8 @@ class Problem1 {
     private static int getScoreWithPage(int page) {
         List<Integer> numberParsed = splitPageToList(page);
         int sumScore = getSumScore(numberParsed);
-        int multipleScore=getMultipleScore(numberParsed);
-        if(sumScore>multipleScore){
+        int multipleScore = getMultipleScore(numberParsed);
+        if (sumScore > multipleScore) {
             return sumScore;
         }
         return multipleScore;
