@@ -10,8 +10,17 @@ class Problem1 {
         }
         int pobiScore = getScoreWithPageList(pobi);
         int crongScore = getScoreWithPageList(crong);
-        int answer = Integer.MAX_VALUE;
-        return answer;
+
+        if(pobiScore==crongScore){
+            return 0;
+        }
+        if(pobiScore>crongScore){
+            return 1;
+        }
+        if(pobiScore<crongScore){
+            return 2;
+        }
+        return -1;
     }
 
     private static boolean isValidInput(List<Integer> pages) {
