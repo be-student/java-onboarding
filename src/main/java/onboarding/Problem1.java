@@ -28,10 +28,10 @@ class Problem1 {
     }
 
     private static boolean isPageListInRange(List<Integer> pages) {
-        if (isPageInRange(pages.get(0))) {
+        if (!isPageInRange(pages.get(0))) {
             return false;
         }
-        if (isPageInRange(pages.get(1))) {
+        if (!isPageInRange(pages.get(1))) {
             return false;
         }
         return true;
