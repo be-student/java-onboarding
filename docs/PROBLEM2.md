@@ -2,15 +2,16 @@
 
 ## 📈 기능 목록
 
-문제 2번의 흐름은 [입력된 String을 StringBuilder로 형태를 변경한다] > [StringBuilder를 조작해서 중복을 제거한다] > [제거된 String을 리턴한다] 순으로 이루어진다
+문제 2번의 흐름은 [입력된 String을 Descryption 인스턴스를 생성한다] > [decryption 을 통해서 중복을 제거한다] > [descryption을 toString으로 반환한다] 순으로 이루어진다
 
-1. 입력된 String을 StringBuilder로 형태를 바꾼다
-2. StringBuilder를 조작해서 중복을 제거한다
-   - StringBuilder의 index를 통해서 순회한다
-   - index와 index+1이 같은 경우 StringBuilder의 index,index+1을 각각 제거한다
-   - index를 1만큼 감소시킨다(0보다 작아지면 0으로 유지한다)
-   - index+1이 전체 길이보다 길어질 때까지 과정 2를 반복한다
-3. 제거된 String을 return한다
+1. 입력된 String으로 Descryption의 인스턴스를 생성한다
+2. descryption으로 중복을 제거한다
+   - descryption에서 isRemained함수로 추가로 탐색할 부분이 있는지 검사
+   - 있다면 그 부분을 제거할 수 있는지 isDeletable로 체크
+   - 삭제할 필요가 없다면 다음 searchNext로 다음 것으로 넘어간다
+   - 삭제할 필요가 있다면 delete함수를 호출해서 제거한다
+   - 2번 과정을 반복한다
+3. 제거된 descryption에서 toString을 return한다
 
 암호문을 좋아하는 괴짜 개발자 브라운이 이번에는 중복 문자를 이용한 새로운 암호를 만들었다. 예를 들어 "browoanoommnaon"이라는 암호문은 다음과 같은 순서로 해독할 수 있다.
 
