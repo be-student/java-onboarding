@@ -17,10 +17,7 @@ class Problem1 {
         if (pobiScore > crongScore) {
             return 1;
         }
-        if(pobiScore<crongScore){
-            return 2;
-        }
-        return -1;
+        return 2;
     }
 
     private static boolean isValidInput(List<Integer> pages) {
