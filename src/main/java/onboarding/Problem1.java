@@ -15,6 +15,9 @@ class Problem1 {
         if (!isPageListInRange(pages)) {
             return false;
         }
+        if (!isPageListConsecutive(pages)) {
+            return false;
+        }
         return true;
     }
 
@@ -34,4 +37,12 @@ class Problem1 {
         }
         return true;
     }
+
+    private static boolean isPageListConsecutive(List<Integer> pages) {
+        if (pages.get(0) + 1 != pages.get(1)) {
+            return false;
+        }
+        return true;
+    }
+
 }
