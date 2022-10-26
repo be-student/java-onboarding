@@ -73,7 +73,11 @@ class Problem1 {
     private static int getScoreWithPage(int page) {
         List<Integer> numberParsed = splitPageToList(page);
         int sumScore = getSumScore(numberParsed);
-        return sumScore;
+        int multipleScore=getMultipleScore(numberParsed);
+        if(sumScore>multipleScore){
+            return sumScore;
+        }
+        return multipleScore;
     }
 
     private static List<Integer> splitPageToList(int page) {
@@ -89,4 +93,9 @@ class Problem1 {
     private static int getSumScore(List<Integer> partial) {
         return partial.stream().reduce(0, (total, number) -> total + number);
     }
+
+    private static int getMultipleScore(List<Integer> partial) {
+        return partial.stream().reduce(1, (total, number) -> total * number);
+    }
+
 }
