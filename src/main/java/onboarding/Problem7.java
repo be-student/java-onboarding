@@ -29,10 +29,7 @@ public class Problem7 {
         }
 
         private void addOneWayEdge(String vertex1, String vertex2) {
-            List<String> edges = graphWithMap.get(vertex1);
-            if (edges == null) {
-                edges = new ArrayList<>();
-            }
+            List<String> edges = graphWithMap.getOrDefault(vertex1,new ArrayList<>());
             edges.add(vertex2);
             graphWithMap.put(vertex1, edges);
         }
