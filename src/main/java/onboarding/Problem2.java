@@ -2,6 +2,7 @@ package onboarding;
 
 public class Problem2 {
     private static Decryption decryption;
+
     public static String solution(String cryptogram) {
         decryption = new Decryption(cryptogram);
         while (decryption.isRemained()) {
@@ -42,8 +43,20 @@ public class Problem2 {
         }
 
         public void delete() {
-            decryptBuilder.delete(watching, watching + 2);
-            watching--;
+            int i = 1;
+            for (; watching + i < decryptBuilder.length(); i++) {
+                if (decryptBuilder.charAt(watching) != decryptBuilder.charAt(watching + i)) {
+                    break;
+                }
+            }
+            decryptBuilder.delete(watching, watching + i);
+            minusWatching();
+        }
+
+        private void minusWatching(){
+            if (watching > 0) {
+                watching--;
+            }
         }
 
         @Override
