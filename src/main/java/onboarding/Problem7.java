@@ -15,6 +15,7 @@ public class Problem7 {
 
         public GraphWithScore() {
             graphWithMap = new HashMap<>();
+            scores=new HashMap<>();
         }
 
         public void createEdge(List<List<String>> friends) {
