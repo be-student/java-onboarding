@@ -29,14 +29,14 @@ public class Problem6 {
     }
 
     private static void findDuplicated(String userEmail, List<String> tokens) {
-        for(int i=0;i<tokens.size();i++){
-            String duplicatedEmail=InvertedMap.get(tokens.get(i));
-            if(duplicatedEmail!=null){
+        for (String token : tokens) {
+            String duplicatedEmail = InvertedMap.get(token);
+            if (duplicatedEmail != null) {
                 answer.add(userEmail);
                 answer.add(duplicatedEmail);
-                break;
+                return;
             }
-            InvertedMap.put(tokens.get(i),userEmail);
+            InvertedMap.put(token, userEmail);
         }
     }
 }
