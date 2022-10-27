@@ -8,11 +8,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class Problem6 {
-    private static Map<String, String> InvertedMap = new HashMap<String, String>();
-    private static Set<String> answer = new HashSet<String>();
+    private static final Map<String, String> InvertedMap = new HashMap<>();
+    private static final Set<String> answer = new HashSet<>();
 
     public static List<String> solution(List<List<String>> forms) {
-        forms.stream().forEach((user) -> {
+        forms.forEach((user) -> {
             List<String> tokenWords = getTokens(user.get(1));
             findDuplicated(user.get(0), tokenWords);
         });

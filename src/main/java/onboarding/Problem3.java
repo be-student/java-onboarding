@@ -29,9 +29,6 @@ public class Problem3 {
         if (parsedNumber % 10 == 6) {
             return true;
         }
-        if (parsedNumber % 10 == 9) {
-            return true;
-        }
-        return false;
+        return parsedNumber % 10 == 9;
     }
 }

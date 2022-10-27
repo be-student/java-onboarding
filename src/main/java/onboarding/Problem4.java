@@ -1,10 +1,9 @@
 package onboarding;
 
 public class Problem4 {
-    private static ReverseWord reverseWord;
 
     private static class ReverseWord {
-        private StringBuilder reverseBuilder;
+        private final StringBuilder reverseBuilder;
         private int watching;
 
         public ReverseWord(String word) {
@@ -13,34 +12,22 @@ public class Problem4 {
         }
 
         public boolean isRemaining() {
-            if (watching < reverseBuilder.length()) {
-                return true;
-            }
-            return false;
+            return watching < reverseBuilder.length();
         }
 
         public boolean isChangable() {
             if (isCapital()) {
                 return true;
             }
-            if (isLower()) {
-                return true;
-            }
-            return false;
+            return isLower();
         }
 
         private boolean isCapital() {
-            if ('A' <= reverseBuilder.charAt(watching) && 'Z' >= reverseBuilder.charAt(watching)) {
-                return true;
-            }
-            return false;
+            return 'A' <= reverseBuilder.charAt(watching) && 'Z' >= reverseBuilder.charAt(watching);
         }
 
         private boolean isLower() {
-            if ('a' <= reverseBuilder.charAt(watching)) {
-                return true;
-            }
-            return false;
+            return 'a' <= reverseBuilder.charAt(watching);
         }
 
         public void change() {
@@ -76,7 +63,7 @@ public class Problem4 {
     }
 
     public static String solution(String word) {
-        reverseWord = new ReverseWord(word);
+        ReverseWord reverseWord = new ReverseWord(word);
         while (reverseWord.isRemaining()) {
             if (reverseWord.isChangable()) {
                 reverseWord.change();

@@ -1,10 +1,10 @@
 package onboarding;
 
 public class Problem2 {
-    private static Decryption decryption;
 
     public static String solution(String cryptogram) {
-        decryption = new Decryption(cryptogram);
+        Decryptor decryption = new Decryptor(cryptogram);
+//        return decryption.decrypt();
         while (decryption.isRemained()) {
             if (!decryption.isDeletable()) {
                 decryption.searchNext();
@@ -12,23 +12,20 @@ public class Problem2 {
             }
             decryption.delete();
         }
-        return decryption.toString();
+        return decryption.getResult();
     }
 
-    private static class Decryption {
-        private StringBuilder decryptBuilder;
+    private static class Decryptor {
+        private final StringBuilder decryptBuilder;
         private int watching;
 
-        public Decryption(String decryption) {
+        public Decryptor(String decryption) {
             watching = 0;
             this.decryptBuilder = new StringBuilder(decryption);
         }
 
         public boolean isRemained() {
-            if (watching < decryptBuilder.length() - 1) {
-                return true;
-            }
-            return false;
+            return watching < decryptBuilder.length() - 1;
         }
 
         public void searchNext() {
@@ -36,10 +33,7 @@ public class Problem2 {
         }
 
         public boolean isDeletable() {
-            if (decryptBuilder.charAt(watching) == decryptBuilder.charAt(watching + 1)) {
-                return true;
-            }
-            return false;
+            return decryptBuilder.charAt(watching) == decryptBuilder.charAt(watching + 1);
         }
 
         public void delete() {
@@ -59,8 +53,8 @@ public class Problem2 {
             }
         }
 
-        @Override
-        public String toString() {
+
+        public String getResult() {
             return decryptBuilder.toString();
         }
     }

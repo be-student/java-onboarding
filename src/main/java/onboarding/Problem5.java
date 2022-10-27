@@ -10,9 +10,9 @@ public class Problem5 {
     public static List<Integer> solution(int money) {
         List<Integer> answer = new ArrayList<>();
         int unprocessed = money;
-        for (int i = 0; i < concurrency.length; i++) {
-            answer.add(unprocessed / concurrency[i]);
-            unprocessed %= concurrency[i];
+        for (int j : concurrency) {
+            answer.add(unprocessed / j);
+            unprocessed %= j;
         }
         return answer;
     }
