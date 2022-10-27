@@ -35,12 +35,30 @@ public class Problem7 {
             graphWithMap.put(vertex1, edges);
         }
 
+        public void searchWithDepth(String from, int depth) {
+            if(depth==0){
+                addScore(from,10);
+                return;
+            }
+            graphWithMap.get(from).stream().forEach((edge)->{
+                searchWithDepth(edge,depth-1);
+            });
+        }
+
+        public void addScore(String vertex,int score){
+            int beforeScore=scores.getOrDefault(vertex,0);
+            scores.put(vertex,beforeScore+score);
+        }
+        public List<Map.Entry<String,Integer>> getScoreList(){
+            return new ArrayList(scores.entrySet());
+        }
     }
 
     public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
         graphWithScore = new GraphWithScore();
         graphWithScore.createEdge(friends);
 
+        graphWithScore.searchWithDepth(user,2);
         List<String> answer = Collections.emptyList();
         return answer;
     }
