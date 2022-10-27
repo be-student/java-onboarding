@@ -59,6 +59,12 @@ public class Problem7 {
         graphWithScore.createEdge(friends);
 
         graphWithScore.searchWithDepth(user,2);
+
+        visitors.stream().forEach((visitor)->{
+            graphWithScore.addScore(visitor,1);
+        });
+
+        System.out.println(graphWithScore.getScoreList());
         List<String> answer = Collections.emptyList();
         return answer;
     }
