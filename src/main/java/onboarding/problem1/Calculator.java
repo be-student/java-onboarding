@@ -34,17 +34,9 @@ public class Calculator {
 
     private int calculateScore(int page) {
         List<Integer> division = dividePage(page);
-        int scoreWithSum = calculateSum(division);
-        int scoreWithMultiple = calculateMultiple(division);
+        int scoreWithSum = new SumCalculator(division).getScore();
+        int scoreWithMultiple = new MultipleCalculator(division).getScore();
 
         return Math.max(scoreWithSum, scoreWithMultiple);
-    }
-
-    private int calculateMultiple(List<Integer> division) {
-        return division.stream().reduce(1, (total, number) -> total * number);
-    }
-
-    private int calculateSum(List<Integer> division) {
-        return division.stream().reduce(0, Integer::sum);
     }
 }
