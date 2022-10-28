@@ -11,7 +11,6 @@ public class Pages {
         this.pageList = pageList;
     }
 
-
     public boolean isIllegal() {
         try {
             isNotNull();
@@ -69,5 +68,13 @@ public class Pages {
         if (pageList.get(1) == 400) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public int getLeftPage() {
+        return pageList.get(0);
+    }
+
+    public int getRightPage() {
+        return pageList.get(1);
     }
 }
