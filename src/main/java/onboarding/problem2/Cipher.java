@@ -31,4 +31,8 @@ public class Cipher {
             throw new IllegalArgumentException();
         }
     }
+
+    public StringBuilder getBuilder() {
+        return new StringBuilder(cryptogram);
+    }
 }
