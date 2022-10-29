@@ -24,4 +24,8 @@ public class NormalWord {
             throw new IllegalArgumentException();
         }
     }
+
+    public String getWords() {
+        return words;
+    }
 }
