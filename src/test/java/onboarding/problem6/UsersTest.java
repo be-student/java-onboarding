@@ -15,9 +15,10 @@ public class UsersTest {
         List<String> 입력1 = List.of("WrongEmail", "사람");
         List<String> 입력2 = List.of("right@email.com", "사람");
         List<String> 입력3 = List.of("right@email.com", "not한글");
-        assertThat(new Users(List.of(입력1, 입력2, 입력3)).getUserInfos().size()).isEqualTo(1);
-        assertThat(new Users(List.of(입력1, 입력2, 입력3)).getUserInfos().get(0).getEmail()).isEqualTo();
+        List<UserInfo> 정보_목록 = new Users(List.of(입력1, 입력2, 입력3)).getUserInfos();
+        assertThat(정보_목록.size()).isEqualTo(1);
+        assertThat(정보_목록.get(0).getEmail()).isEqualTo("right@email.com");
+        assertThat(정보_목록.get(0).getNickname()).isEqualTo("사람");
 
-        List.of(new UserInfo(입력2))
     }
 }
