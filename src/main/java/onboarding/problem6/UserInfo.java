@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class UserInfo {
     private static final Pattern KOREAN = Pattern.compile("^[가-힣]*$");
-    private List<String> emailAndNickname;
+    private final List<String> emailAndNickname;
 
     public UserInfo(List<String> oneInfo) {
         this.emailAndNickname = oneInfo;
