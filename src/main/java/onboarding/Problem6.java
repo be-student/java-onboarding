@@ -1,10 +1,13 @@
 package onboarding;
 
+import onboarding.problem6.SimilarityChecker;
+import onboarding.problem6.Users;
+
 import java.util.List;
 
 public class Problem6 {
     public static List<String> solution(List<List<String>> forms) {
-        List<String> answer = List.of("answer");
-        return answer;
+        Users validUsers = new Users(forms);
+        return new SimilarityChecker().getSimilarEmails(validUsers).toList();
     }
 }
