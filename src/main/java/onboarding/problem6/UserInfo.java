@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class UserInfo {
-    private static final Pattern KOREAN = Pattern.compile("^[가-힣]*$");
+    private static final Pattern KOREAN = Pattern.compile("^[ㄱ-ㅎㅏ-ㅣ가-힣]*$");
     private final List<String> emailAndNickname;
 
     public UserInfo(List<String> oneInfo) {
