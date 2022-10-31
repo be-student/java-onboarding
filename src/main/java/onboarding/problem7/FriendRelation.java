@@ -25,7 +25,7 @@ public class FriendRelation {
     }
 
     private void isSizeEnough(List<List<String>> friends) {
-        if (this.friends.size() == 0 || this.friends.size() > 10000) {
+        if (friends.size() == 0 || friends.size() > 10000) {
             throw new IllegalArgumentException();
         }
     }

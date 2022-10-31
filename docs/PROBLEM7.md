@@ -11,12 +11,15 @@
     - [예외사항] visitor가 null임
     - [예외사항] visitor의 길이가 0이상 10000이하가 아님
     - [예외사항] 사용자 아이디는 알파벳 소문자로만 이루어져 있지 않음
-2.
+2. 친구 그룹 그래프 만들기
+3. 친구로 추천 점수 계산하기
+4. 방문자로 추천 점수 계산하기
+5. 계산한 결과를 상위 5명만 보여주기
 
-User Friends Visitors
-RecommendDTO new SnsGraph(Friends).getRecommend(User);
-new VisitorScore(SnsGraph).getVisitors(Visitors);
-new Recommender(RecommendDto,SnsGraph).getFive(user).toList();
+   SnsNetwork snsNetwork = new SnsNetwork(friendRelation);
+   RecommendDTO = snsNetwork.getRecommend(target);
+   RecommendDTO = new VisitorScore(visitorCount).sum(RecommendDto);
+   return new Recommender(RecommendDto, snsNetwork).getFive(user).toList();
 
 레벨 2의 팀 프로젝트 미션으로 SNS(Social Networking Service)를 만들고자 하는 팀이 있다. 팀에 속한 크루 중 평소 알고리즘에 관심이 많은 미스터코는 친구 추천 알고리즘을 구현하고자 아래와
 같은 규칙을 세웠다.
